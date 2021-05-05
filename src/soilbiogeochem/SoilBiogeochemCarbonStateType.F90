@@ -1051,5 +1051,38 @@ contains
 
   end subroutine DynamicColumnAdjustments
 
+  subroutine DocProduction(totsomc_col,temperature_inst totsomc_doc)
+    !This subroutine calculates the amount of DOC production from total soil organic
+    !matter carboni
+    !ARGUMENTS
+    type(temperature_type)               , intent(in)    :: temperature_inst   
+    
+    implicit none
+    real(r8), intent(inout)   :: totsomc_col  !INPUT and OUTPUT (KgC/m2)
+    real(r8), intent(out)     :: totsomc_doc  !OUTPUT (KgC/m2 per day)
+    real(r8), intent(in)      :: beta_z       !INPUT (per m) Carbon distribution
+    ! with depth depending on biome
+    real(r8), intent(in)      :: dzi         !INPUT thickness of the soil layer i
+    real(r8), intent(in)      :: beta0i        !INPUT (per m)
+    real(r8), parameter       :: z0 = 65.68_r8  !e-folding depth of C-content
+     !within 1m of soil INPUT (unit meter)
+    !real(r8), intent(in)      :: zi    ! soil depth of layer i
+    real(r8), parameter       :: kp     !Rate constant for DOC production
+       ! specific to each carbon pool (unit, per day)
+    real(r8), parameter       :: Df = 0.75_r8 ! Slope parameter controlling DOC
+      !production and decomposition modifier (no unit)
+    real(r8), parameter       :: tauz = 2.0_r8 ! Decay of carbon decomposition
+        !with depth z (unit, per m)
+    real(r8), parameter       :: Fs = 1.0_r8  ! Rate modifier due to soil moisture(kg/m2)
+    real(r8), intent(in)      :: Ft  ! Rate modifier due to soil temperature(K)
+    real(r8), intent(in)      :: Fv  ! Fraction coverage of vegetation type
+    associate(t_soisno       => temperature_inst%t_soisno_col )
+    ! Input:  [real(r8) (:,:)   ]  soil temperature (Kelvin)  (-nlevsno+1:nlevgrnd) 
+    !beta0i  = exp( -zi / z0 ) * dzi 
+    !beta_z = beta0i / (beta01 +beta02 +beta03 +beta04)
+    kp = 1.e-4_r8    / (secspday * days_per_year * params_inst%tau_s1_bgc)
+    Ft  = 47.9_r8 / (1 + exp(106._r8 / (t_soisno + 18.3_r8)))
+    totsomc_doc = totsomc_col * (1 - exp ( -kp*Fs*Ft*Df)) * exp(-tauz)
+  end subroutine DocProduction
 
 end module SoilBiogeochemCarbonStateType
