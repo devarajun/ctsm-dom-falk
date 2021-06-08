@@ -1103,15 +1103,20 @@ def main ():
         print (timetag)
 
         #--  Specify land domain file  ---------------------------------
-        fdomain_in  = dir_inputdata+'share/domains/domain.lnd.fv1.9x2.5_gx1v7.170518.nc'
-        fdomain_out = dir_output + 'domain.lnd.fv1.9x2.5_gx1v7.'+region.tag+'_170518.nc'
+        fdomain_in  = dir_inputdata+'share/domains/domain.lnd.360x720_tx0.1v3.210506.nc'
+        fdomain_out = dir_output + 'domain.lnd.360x720_tx0.1v3.210506.'+region.tag+'_210608.nc'
+#        fdomain_in  = dir_inputdata+'share/domains/domain.lnd.fv1.9x2.5_gx1v7.170518.nc'
+#        fdomain_out = dir_output + 'domain.lnd.fv1.9x2.5_gx1v7.'+region.tag+'_170518.nc'
         #SinglePointCase.set_fdomain (fdomain)
         region.fdomain_in = fdomain_in
         region.fdomain_out = fdomain_out
 
         #--  Specify surface data file  --------------------------------
-        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_1.9x2.5_78pfts_CMIP6_simyr1850_c170824.nc'
-        fsurf_out   = dir_output + 'surfdata_1.9x2.5_78pfts_CMIP6_simyr1850_'+region.tag+'_c170824.nc'
+        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824.nc'
+        fsurf_out   = dir_output + 'surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824_'+region.tag+'_210608.nc'
+
+#        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_1.9x2.5_78pfts_CMIP6_simyr1850_c170824.nc'
+#        fsurf_out   = dir_output + 'surfdata_1.9x2.5_78pfts_CMIP6_simyr1850_'+region.tag+'_c170824.nc'
         region.fsurf_in = fsurf_in
         region.fsurf_out = fsurf_out
 
