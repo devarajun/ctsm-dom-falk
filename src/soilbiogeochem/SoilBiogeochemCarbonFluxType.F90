@@ -104,8 +104,7 @@ contains
      allocate(this%som_c_leached_col (begc:endc))                  ; this%som_c_leached_col (:)   =nan
      allocate(this%somc_fire_col     (begc:endc))                  ; this%somc_fire_col     (:)   =nan
      allocate(this%hr_vr_col         (begc:endc,1:nlevdecomp_full)); this%hr_vr_col         (:,:) =nan
-
-     allocate(this%dom_c_col         (begc:endc))                  : this%dom_c_col         (:)   =nan 
+     allocate(this%dom_c_col         (begc:endc))                  ; this%dom_c_col         (:)   =nan 
      allocate(this%decomp_cpools_sourcesink_col(begc:endc,1:nlevdecomp_full,1:ndecomp_pools))                  
      this%decomp_cpools_sourcesink_col(:,:,:)= nan
 
