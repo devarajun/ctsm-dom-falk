@@ -1,0 +1,66 @@
+21-06-12 01:43:47 STDOUT       INFO     User = devarajun
+21-06-12 01:43:47 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-12 01:43:47 STDOUT       INFO     Running the script for the region
+21-06-12 01:43:47 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-12 01:43:47 STDOUT       INFO     create_datm = False
+21-06-12 01:43:47 STDOUT       INFO     create_domain = True
+21-06-12 01:43:47 STDOUT       INFO     create_landuse = False
+21-06-12 01:43:47 STDOUT       INFO     create_surfdata = True
+21-06-12 01:43:47 STDOUT       INFO     lat1 = 48.0
+21-06-12 01:43:47 STDOUT       INFO     lat2 = 81.0
+21-06-12 01:43:47 STDOUT       INFO     lon1 = 184.25
+21-06-12 01:43:47 STDOUT       INFO     lon2 = 222.25
+21-06-12 01:43:47 STDOUT       INFO     reg_name = sca05x05
+21-06-12 01:43:47 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-12 01:43:47 STDOUT       INFO     b'210612'
+21-06-12 01:43:47 STDOUT       INFO     Creating domain file at region: sca05x05
+21-06-12 01:43:47 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/share/domains/domain.lnd.360x720_tx0.1v3.210506.nc
+21-06-12 01:43:49 STDOUT       INFO     Successfully created file (fdomain_out)/cluster/projects/nn2806k/dev/region/domain.lnd.360x720_tx0.1v3.210506.sca05x05_210608.nc
+21-06-12 01:43:49 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-12 01:43:49 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824.nc
+21-06-12 01:43:58 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824_sca05x05_210608.nc
+21-06-12 01:43:58 STDOUT       INFO     Successfully ran script for a regional case.
+21-06-12 01:44:20 STDOUT       INFO     User = devarajun
+21-06-12 01:44:20 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-12 01:44:20 STDOUT       INFO     Running the script for the region
+21-06-12 01:44:20 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-12 01:44:20 STDOUT       INFO     create_datm = False
+21-06-12 01:44:20 STDOUT       INFO     create_domain = True
+21-06-12 01:44:20 STDOUT       INFO     create_landuse = False
+21-06-12 01:44:20 STDOUT       INFO     create_surfdata = True
+21-06-12 01:44:20 STDOUT       INFO     lat1 = 48.25
+21-06-12 01:44:20 STDOUT       INFO     lat2 = 80.75
+21-06-12 01:44:20 STDOUT       INFO     lon1 = 184.25
+21-06-12 01:44:20 STDOUT       INFO     lon2 = 222.25
+21-06-12 01:44:20 STDOUT       INFO     reg_name = sca05x05
+21-06-12 01:44:20 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-12 01:44:20 STDOUT       INFO     b'210612'
+21-06-12 01:44:20 STDOUT       INFO     Creating domain file at region: sca05x05
+21-06-12 01:44:20 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/share/domains/domain.lnd.360x720_tx0.1v3.210506.nc
+21-06-12 01:44:20 STDOUT       INFO     Successfully created file (fdomain_out)/cluster/projects/nn2806k/dev/region/domain.lnd.360x720_tx0.1v3.210506.sca05x05_210608.nc
+21-06-12 01:44:20 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-12 01:44:20 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824.nc
+21-06-12 01:44:20 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824_sca05x05_210608.nc
+21-06-12 01:44:20 STDOUT       INFO     Successfully ran script for a regional case.
+21-06-12 01:44:48 STDOUT       INFO     User = devarajun
+21-06-12 01:44:48 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-12 01:44:48 STDOUT       INFO     Running the script for the region
+21-06-12 01:44:48 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-12 01:44:48 STDOUT       INFO     create_datm = False
+21-06-12 01:44:48 STDOUT       INFO     create_domain = True
+21-06-12 01:44:48 STDOUT       INFO     create_landuse = False
+21-06-12 01:44:48 STDOUT       INFO     create_surfdata = True
+21-06-12 01:44:48 STDOUT       INFO     lat1 = 48.25
+21-06-12 01:44:48 STDOUT       INFO     lat2 = 80.75
+21-06-12 01:44:48 STDOUT       INFO     lon1 = 184.25
+21-06-12 01:44:48 STDOUT       INFO     lon2 = 222.25
+21-06-12 01:44:48 STDOUT       INFO     reg_name = sca05x05
+21-06-12 01:44:48 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-12 01:44:48 STDOUT       INFO     b'210612'
+21-06-12 01:44:48 STDOUT       INFO     Creating domain file at region: sca05x05
+21-06-12 01:44:48 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/share/domains/domain.lnd.360x720_tx0.1v3.210506.nc
+21-06-12 01:44:48 STDOUT       INFO     Successfully created file (fdomain_out)/cluster/projects/nn2806k/dev/region/domain.lnd.360x720_tx0.1v3.210506.sca05x05.nc
+21-06-12 01:44:48 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-12 01:44:48 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824.nc
+21-06-12 01:44:59 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824_sca05x05.nc
+21-06-12 01:44:59 STDOUT       INFO     Successfully ran script for a regional case.

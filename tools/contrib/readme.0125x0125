@@ -1,0 +1,20 @@
+#First create domain and surface data file for the region of interest (eg.scandinavia)
+
+./subset_data0125x0125.py reg --reg scand --lat1 48.0 --lat2 72.0 --lon1 4.0 --lon2 42.0 --create_domain True --create_surface True --outdir /cluster/projects/nn2806k/dev/region/
+
+#Use the created domain file to create scripgrid file following the below ncl script
+/cluster/home/devarajun/ncl_scripts/prepare_scrip0125x0125_CLM5.ncl
+
+output of ncl script is created here: /cluster/projects/nn2806k/dev/scripgrid/SCRIPgrid_0125x0125scand_nomask.nc
+
+#next create land to/from runoff mapping files follwing the below command
+#see already script available here:
+#
+#/cluster/home/devarajun/scripgrids/roftolnd0125x0125.sh
+#on FRAM machine
+module purge
+module load ESMF/8.0.0-intel-2019b
+
+#river to land mapping file 
+   ESMF_RegridWeightGen --ignore_unmapped -s SCRIPgrid_0125x0125scand_nomask.nc -d SCRIPgrid_0125x0125scand_nomask.nc -m conserve -w map_${gridname}_runoff_to_land_c${cdate} --dst_regional --src_type SCRIP --dst_type SCRIP
+   ESMF_RegridWeightGen --ignore_unmapped -s SCRIPgrid_0125x0125scand_nomask.nc -d SCRIPgrid_0125x0125scand_nomask.nc -m conserve -w ${pathregmaps}/map_${gridname}_land_to_runoff_c${cdate} --src_regional --src_type SCRIP --dst_type SCRIP

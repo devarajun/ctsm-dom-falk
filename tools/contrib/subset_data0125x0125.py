@@ -985,7 +985,7 @@ def main ():
         timetag = today.strftime("%y%m%d")
 
         #--  Specify land domain file  ---------------------------------
-        fdomain_in  = os.path.join(dir_inputdata,'share/domains/domain.lnd.fv0.9x1.25_gx1v7.151020.nc')
+        fdomain_in  = os.path.join(dir_inputdata,'share/domains/domain.lnd.360x720_tx0.1v3.210506.nc')
         fdomain_out = dir_output + single_point.add_tag_to_filename( fdomain_in, single_point.tag )
         single_point.fdomain_in = fdomain_in
         single_point.fdomain_out = fdomain_out
@@ -996,7 +996,7 @@ def main ():
         if crop_flag:
             fsurf_in    = os.path.join (dir_inputdata, 'lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_78pfts_CMIP6_simyr2000_c190214.nc')
         else:
-            fsurf_in    = os.path.join (dir_inputdata, 'lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_0.9x1.25_hist_16pfts_Irrig_CMIP6_simyr2000_c190214.nc')
+            fsurf_in    = os.path.join (dir_inputdata, 'lnd/clm2/surfdata_map/surfdata_360x720cru_78pfts_CMIP6_simyr1850_c170824.nc')
 
         #fsurf_out  = dir_output + single_point.add_tag_to_filename(fsurf_in, single_point.tag) # remove res from filename for singlept
         fsurf_out   = dir_output + single_point.create_fileout_name(fsurf_in, single_point.tag)
@@ -1103,8 +1103,8 @@ def main ():
         print (timetag)
 
         #--  Specify land domain file  ---------------------------------
-        fdomain_in  = dir_inputdata+'share/domains/domain.lnd.360x720_tx0.1v3.210506.nc'
-        fdomain_out = dir_output + 'domain.lnd.360x720_tx0.1v3.210506.'+region.tag+'_210608.nc'
+        fdomain_in  = dir_inputdata+'share/domains/domain.lnd.0.125x0.125_tx0.1v2.140704.nc'
+        fdomain_out = dir_output + 'domain.lnd.0.125x0.125_tx0.1v2.140704'+region.tag+'.nc'
 #        fdomain_in  = dir_inputdata+'share/domains/domain.lnd.fv1.9x2.5_gx1v7.170518.nc'
 #        fdomain_out = dir_output + 'domain.lnd.fv1.9x2.5_gx1v7.'+region.tag+'_170518.nc'
         #SinglePointCase.set_fdomain (fdomain)
@@ -1112,8 +1112,10 @@ def main ():
         region.fdomain_out = fdomain_out
 
         #--  Specify surface data file  --------------------------------
-        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824.nc'
-        fsurf_out   = dir_output + 'surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824_'+region.tag+'_210608.nc'
+        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_0.125x0.125_hist_16pfts_Irrig_CMIP6_simyr2005_c190613.nc'
+        fsurf_out   = dir_output + 'surfdata_0.125x0.125_hist_16pfts_Irrig_CMIP6_simyr2005_c190613'+region.tag+'.nc'
+#        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824.nc'
+#        fsurf_out   = dir_output + 'surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr2000_c170824_'+region.tag+'.nc'
 
 #        fsurf_in    = dir_inputdata+'lnd/clm2/surfdata_map/surfdata_1.9x2.5_78pfts_CMIP6_simyr1850_c170824.nc'
 #        fsurf_out   = dir_output + 'surfdata_1.9x2.5_78pfts_CMIP6_simyr1850_'+region.tag+'_c170824.nc'

@@ -1,0 +1,95 @@
+21-06-13 00:47:46 STDOUT       INFO     User = devarajun
+21-06-13 00:47:46 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-13 00:47:46 STDOUT       INFO     Running the script for the region
+21-06-13 00:47:46 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-13 00:47:46 STDOUT       INFO     create_datm = False
+21-06-13 00:47:46 STDOUT       INFO     create_domain = False
+21-06-13 00:47:46 STDOUT       INFO     create_landuse = False
+21-06-13 00:47:46 STDOUT       INFO     create_surfdata = True
+21-06-13 00:47:46 STDOUT       INFO     lat1 = 4.25
+21-06-13 00:47:46 STDOUT       INFO     lat2 = 42.25
+21-06-13 00:47:46 STDOUT       INFO     lon1 = 48.0
+21-06-13 00:47:46 STDOUT       INFO     lon2 = 81.0
+21-06-13 00:47:46 STDOUT       INFO     reg_name = sca05x05
+21-06-13 00:47:46 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-13 00:47:46 STDOUT       INFO     b'210613'
+21-06-13 00:47:46 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-13 00:47:46 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_78pfts_CMIP6_simyr1850_c170824.nc
+21-06-13 00:48:39 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_78pfts_CMIP6_simyr1850_c170824sca05x05.nc
+21-06-13 00:48:39 STDOUT       INFO     Successfully ran script for a regional case.
+21-06-13 01:34:34 STDOUT       INFO     User = devarajun
+21-06-13 01:34:34 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-13 01:34:34 STDOUT       INFO     Running the script for the region
+21-06-13 01:34:34 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-13 01:34:34 STDOUT       INFO     create_datm = False
+21-06-13 01:34:34 STDOUT       INFO     create_domain = False
+21-06-13 01:34:34 STDOUT       INFO     create_landuse = False
+21-06-13 01:34:34 STDOUT       INFO     create_surfdata = True
+21-06-13 01:34:34 STDOUT       INFO     lat1 = 4.25
+21-06-13 01:34:34 STDOUT       INFO     lat2 = 42.25
+21-06-13 01:34:34 STDOUT       INFO     lon1 = 48.0
+21-06-13 01:34:34 STDOUT       INFO     lon2 = 81.0
+21-06-13 01:34:34 STDOUT       INFO     reg_name = sca05x05
+21-06-13 01:34:34 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-13 01:34:34 STDOUT       INFO     b'210613'
+21-06-13 01:34:34 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-13 01:34:34 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_CMIP6_simyr1850_c170706.nc
+21-06-13 01:34:42 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_CMIP6_simyr1850_c170706sca05x05.nc
+21-06-13 01:34:42 STDOUT       INFO     Successfully ran script for a regional case.
+21-06-13 02:10:31 STDOUT       INFO     User = devarajun
+21-06-13 02:10:31 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-13 02:10:31 STDOUT       INFO     Running the script for the region
+21-06-13 02:10:31 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-13 02:10:31 STDOUT       INFO     create_datm = False
+21-06-13 02:10:31 STDOUT       INFO     create_domain = False
+21-06-13 02:10:31 STDOUT       INFO     create_landuse = False
+21-06-13 02:10:31 STDOUT       INFO     create_surfdata = True
+21-06-13 02:10:31 STDOUT       INFO     lat1 = 4.25
+21-06-13 02:10:31 STDOUT       INFO     lat2 = 42.25
+21-06-13 02:10:31 STDOUT       INFO     lon1 = 48.0
+21-06-13 02:10:31 STDOUT       INFO     lon2 = 81.0
+21-06-13 02:10:31 STDOUT       INFO     reg_name = sca05x05
+21-06-13 02:10:31 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-13 02:10:31 STDOUT       INFO     b'210613'
+21-06-13 02:10:31 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-13 02:10:31 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824.nc
+21-06-13 02:10:40 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824sca05x05.nc
+21-06-13 02:10:40 STDOUT       INFO     Successfully ran script for a regional case.
+21-06-13 02:17:18 STDOUT       INFO     User = devarajun
+21-06-13 02:17:18 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-13 02:17:18 STDOUT       INFO     Running the script for the region
+21-06-13 02:17:18 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-13 02:17:18 STDOUT       INFO     create_datm = False
+21-06-13 02:17:18 STDOUT       INFO     create_domain = False
+21-06-13 02:17:18 STDOUT       INFO     create_landuse = False
+21-06-13 02:17:18 STDOUT       INFO     create_surfdata = True
+21-06-13 02:17:18 STDOUT       INFO     lat1 = 4.25
+21-06-13 02:17:18 STDOUT       INFO     lat2 = 42.25
+21-06-13 02:17:18 STDOUT       INFO     lon1 = 48.25
+21-06-13 02:17:18 STDOUT       INFO     lon2 = 81.25
+21-06-13 02:17:18 STDOUT       INFO     reg_name = sca05x05
+21-06-13 02:17:18 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-13 02:17:18 STDOUT       INFO     b'210613'
+21-06-13 02:17:18 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-13 02:17:18 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824.nc
+21-06-13 02:17:18 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824_sca05x05_210608.nc
+21-06-13 02:17:18 STDOUT       INFO     Successfully ran script for a regional case.
+21-06-13 02:20:29 STDOUT       INFO     User = devarajun
+21-06-13 02:20:29 STDOUT       INFO     Current directory = /cluster/home/devarajun/ctsm_dom/tools/contrib
+21-06-13 02:20:29 STDOUT       INFO     Running the script for the region
+21-06-13 02:20:29 STDOUT       INFO     <class '__main__.RegionalCase'>
+21-06-13 02:20:29 STDOUT       INFO     create_datm = False
+21-06-13 02:20:29 STDOUT       INFO     create_domain = False
+21-06-13 02:20:29 STDOUT       INFO     create_landuse = False
+21-06-13 02:20:29 STDOUT       INFO     create_surfdata = True
+21-06-13 02:20:29 STDOUT       INFO     lat1 = 4.25
+21-06-13 02:20:29 STDOUT       INFO     lat2 = 42.25
+21-06-13 02:20:29 STDOUT       INFO     lon1 = 48.0
+21-06-13 02:20:29 STDOUT       INFO     lon2 = 81.0
+21-06-13 02:20:29 STDOUT       INFO     reg_name = sca05x05
+21-06-13 02:20:29 STDOUT       INFO      crop_flag = False num_pft =16
+21-06-13 02:20:29 STDOUT       INFO     b'210613'
+21-06-13 02:20:29 STDOUT       INFO     Creating surface dataset file at region: sca05x05
+21-06-13 02:20:29 STDOUT       INFO     Open file: /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_map/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824.nc
+21-06-13 02:20:29 STDOUT       INFO     created file (fsurf_out)/cluster/projects/nn2806k/dev/region/surfdata_360x720cru_16pfts_Irrig_CMIP6_simyr1850_c170824_sca05x05_210608.nc
+21-06-13 02:20:29 STDOUT       INFO     Successfully ran script for a regional case.
