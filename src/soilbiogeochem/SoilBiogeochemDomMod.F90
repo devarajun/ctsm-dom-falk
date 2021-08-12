@@ -11,7 +11,8 @@ module SoilBiogeochemDomMod
   !TODO add variables clm_varctl
   !use clm_varctl                      , only : use_nitrif_denitrif, use_vertsoilc
   use ColumnType                      , only : col
-  use TemperatureType                 , only : temperature_type                
+  use TemperatureType                 , only : temperature_type
+  use SoilBiogeochemCarbonFluxType    , only : soilbiogeochem_carbonflux_type                
   !
   implicit none
   private
@@ -22,8 +23,6 @@ module SoilBiogeochemDomMod
   !
   ! !PRIVATE DATA:
   type, private :: params_type
-     real(r8):: kp         ! Rate constant for DOC production, specific to each
-                           ! carbon pool (unit, per day)
      real(r8):: tau_s1_bgc ! 1/turnover time of  SOM 1 from Century (1/7.3) (1/yr)
   end type params_type
   
@@ -40,6 +39,8 @@ contains
     !
     ! !USES:
     use ncdio_pio    , only: file_desc_t,ncd_io
+    use abortutils  , only : endrun
+    use shr_log_mod , only : errMsg => shr_log_errMsg
     !
     ! !ARGUMENTS:
     type(file_desc_t),intent(inout) :: ncid   ! pio netCDF file id
@@ -61,8 +62,7 @@ contains
 
   !-----------------------------------------------------------------------
   subroutine SoilBiogeochemDOCprod(bounds, num_soilc, filter_soilc, &
-        temperature_inst, totsomc_col &
-        somc_doc_col)
+        temperature_inst, totsomc_col, soilbiogeochem_carbonflux_inst)
     !
     ! !DESCRIPTION:
     ! On the radiation time step, update the nitrogen leaching rate
@@ -71,23 +71,26 @@ contains
     ! !USES:
     use clm_varpar       , only : nlevdecomp, nlevsoi
     use clm_varcon       , only : secspday
-    use clm_time_manager , only : get_step_size_reali
+    use clm_time_manager , only : get_step_size_real,get_days_per_year
     !
     ! !ARGUMENTS:
     type(bounds_type)                       , intent(in)    :: bounds  
     integer                                 , intent(in)    :: num_soilc       ! number of soil columns in filter
     integer                                 , intent(in)    :: filter_soilc(:) ! filter for soil columns
     type(temperature_type)                  , intent(in)    :: temperature_inst
+    type(soilbiogeochem_carbonflux_type)    , intent(inout) :: soilbiogeochem_carbonflux_inst
     real(r8)                       , intent(in)    :: totsomc_col(bounds%begc:)   ! (gC/m2) total soil organic matter C
-    real(r8)                       , intent(out)   :: somc_doc_col(bounds%begc:)  ! (gC/m2/s) DOC production from soil organic matter
+    !real(r8)                       , intent(out)   :: somc_doc_col(bounds%begc:)  ! (gC/m2/s) DOC production from soil organic matter
 
-    !
-    SHR_ASSERT_ALL_FL((ubound(totsomc_col)          == (/bounds%endc/)) , sourcefile, __LINE__)
-    SHR_ASSERT_ALL_FL((ubound(somc_dom_col)        == (/bounds%endc/)) , sourcefile, __LINE__) 
+    !SHR_ASSERT_ALL_FL((ubound(totsomc_col)          == (/bounds%endc/)) , sourcefile, __LINE__)
+    !SHR_ASSERT_ALL_FL((ubound(somc_dom_col)        == (/bounds%endc/)) , sourcefile, __LINE__) 
 
     ! !LOCAL VARIABLES:
     integer  :: c,fc                                   ! indices
+    real(r8):: kp                                      ! Rate constant for DOC production, specific to
+                                                       ! each carbon pool (unit, per day)
     real(r8) :: dt                                     ! radiation time step (seconds)
+    real(r8) :: dayspyr                                ! days per year (days)
     real(r8) :: tauz = 24.82748_r8                     ! Empirical factor for a
                                                        ! decrease in C decomposition rates with soil depths
     real(r8), parameter :: Df = 0.75_r8                ! Slope parameter controlling DOC
@@ -99,7 +102,7 @@ contains
     associate(                                                                             & 
          t_soisno             =>    temperature_inst%t_soisno_col , & ! Input:  [real(r8) (:,:)  ]  soil temperature (Kelvin) (-nlevsno+1:nlevgrnd) 
          totsomc              =>    totsomc_col, &                    ! Input:  [real(r8) (:)     ]  (gC/m2) total soil organic matter C
-         somc_doc             =>    somc_doc_col, &                   ! Output:[real(r8) (:)     ]  (gC/m2/s) DOC production from soil organic matter
+         somc_doc             =>    soilbiogeochem_carbonflux_inst%somc_doc_col & ! Output:[real(r8) (:)     ]  (gC/m2/s) DOC production from soil organic matter
          )
       ! set time steps
       dt = get_step_size_real()

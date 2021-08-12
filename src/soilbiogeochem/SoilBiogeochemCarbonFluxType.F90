@@ -37,7 +37,7 @@ module SoilBiogeochemCarbonFluxType
      real(r8), pointer :: som_c_leached_col                         (:)     ! (gC/m^2/s) total SOM C loss from vertical transport
      real(r8), pointer :: decomp_cpools_leached_col                 (:,:)   ! (gC/m^2/s) C loss from vertical transport from each decomposing C pool 
      real(r8), pointer :: decomp_cpools_transport_tendency_col      (:,:,:) ! (gC/m^3/s) C tendency due to vertical transport in decomposing C pools 
-     real(r8), pointer :: dom_c_col                                 (:)     ! (gC/m2/s) C loss from total som_c, dissolved organic matter carbon flux
+     real(r8), pointer :: somc_doc_col                                 (:)     ! (gC/m2/s) C loss from total som_c, dissolved organic matter carbon flux
      
      ! nitrif_denitrif
      real(r8), pointer :: phr_vr_col                                (:,:)   ! (gC/m3/s) potential hr (not N-limited) 
@@ -104,7 +104,7 @@ contains
      allocate(this%som_c_leached_col (begc:endc))                  ; this%som_c_leached_col (:)   =nan
      allocate(this%somc_fire_col     (begc:endc))                  ; this%somc_fire_col     (:)   =nan
      allocate(this%hr_vr_col         (begc:endc,1:nlevdecomp_full)); this%hr_vr_col         (:,:) =nan
-     allocate(this%dom_c_col         (begc:endc))                  ; this%dom_c_col         (:)   =nan 
+     allocate(this%somc_doc_col         (begc:endc))                  ; this%somc_doc_col         (:)   =nan 
      allocate(this%decomp_cpools_sourcesink_col(begc:endc,1:nlevdecomp_full,1:ndecomp_pools))                  
      this%decomp_cpools_sourcesink_col(:,:,:)= nan
 
@@ -364,10 +364,10 @@ contains
            endif
         end do
    
-        this%dom_c_col(begc:endc) = spval
+        this%somc_doc_col(begc:endc) = spval
         call hist_addfld1d (fname='DOM_C_PROD', units='gC/m^2/s', &
              avgflag='A', long_name='total flux of C production from SOM to DOC', &
-             ptr_col=this%dom_c_col)!, default='inactive')
+             ptr_col=this%somc_doc_col)!, default='inactive')
 
         if ( nlevdecomp_full > 1 ) then
            data2dptr => this%hr_vr_col(begc:endc,1:nlevsoi)
@@ -711,7 +711,7 @@ contains
        this%somhr_col(i)         = value_column
        this%lithr_col(i)         = value_column
        this%soilc_change_col(i)  = value_column
-       this%dom_c_col(i)         = value_column
+       this%somc_doc_col(i)         = value_column
     end do
 
     ! NOTE: do not zero the fates to BGC C flux variables since they need to persist from the daily fates timestep s to the half-hourly BGC timesteps.  I.e. FATES_c_to_litr_lab_c_col, FATES_c_to_litr_cel_c_col, FATES_c_to_litr_lig_c_col
@@ -739,7 +739,7 @@ contains
     do fc = 1,num_soilc
        c = filter_soilc(fc)
        this%som_c_leached_col(c) = 0._r8
-       this%dom_c_col(c)         = 0._r8
+       this%somc_doc_col(c)         = 0._r8
     end do
 
     ! vertically integrate HR and decomposition cascade fluxes
